@@ -34,7 +34,7 @@ function executeStatement(){
 	
 	request.on('row',function(columns){//データの取得毎に呼ぶ
 		result+='<tr>';
-		colmns.forEach(function(column){
+		columns.forEach(function(column){
 			if(column.value===null){
 				console.log('NULL');
 			}else{
@@ -46,7 +46,7 @@ function executeStatement(){
 	
 	request.on('doneProc',function(rowCount,more,returnStatus,rows){//完了時に呼ぶ
 		result+="</table>";
-		res.render('index',{title:""はじめてのDataBase",message:result});
+		res.render('index',{title:"はじめてのDataBase",message:result});
 		});
 		
 	connection.execSql(request);
