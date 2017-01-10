@@ -44,6 +44,13 @@ function executeStatement(){
 		});
 	});
 	
-	request.on
-
+	request.on('doneProc',function(rowCount,more,returnStatus,rows){//完了時に呼ぶ
+		result+="</table>";
+		res.render('index',{title:""はじめてのDataBase",message:result});
+		});
+		
+	connection.execSql(request);
+	}
+});
+	
 module.exports = router;
