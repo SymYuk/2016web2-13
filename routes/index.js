@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
 	var config={
 		userName: 'symyuk',
 		password: 'UraNyan1000',
-		server:'2016web2-Sym',
+		server:'2016web2-sym',
 		options: {encrypt: true, database: '2016web2-13'}
-	}
+	};
 	var connection=new Connection(config);
 	connection.on('connect',function(err){
 		if(err){
